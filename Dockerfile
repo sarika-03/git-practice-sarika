@@ -1,8 +1,11 @@
-FROM python
-WORKDIR /appy
-COPY requirements.txt  .
-RUN pip install --root-user-action=ignore -r requirements.txt
+# Use official Python base image
+FROM python:3.10-slim
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy local Python script to container
 COPY app.py .
-RUN chmod 755 /appy/app.py
-EXPOSE 8000 
-CMD ["python", "./app.py"]
+
+# Run the Python script
+CMD ["python", "app.py"]

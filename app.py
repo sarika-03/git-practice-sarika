@@ -1,6 +1,7 @@
-note = "hey i'm learing devops"
+# app.py
+import time
 
-with open("notes.txt", "a") as file:
-    file.write(note + "\n")
+while True:
+    print("Container is running... 💻")
+    time.sleep(20)
 
-print("Note saved!")
