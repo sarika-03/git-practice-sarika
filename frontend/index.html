@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Frontend</h1>
-<button onclick="fetchBackend()">Call Backend</button>
-<p id="result"></p>
+  <head><title>Frontend</title></head>
+  <body>
+    <h1>Frontend is working!</h1>
+    <button onclick="callBackend()">Call Backend</button>
+    <p id="output"></p>
 
-<script>
-function fetchBackend() {
-  fetch('http://backend:5000/')
-    .then(res => res.text())
-    .then(data => document.getElementById('result').innerText = data)
-    .catch(err => console.error(err));
-}
-</script>
-</body>
+    <script>
+      function callBackend() {
+        fetch("http://backend:5000/")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("output").innerText = data;
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+      }
+    </script>
+  </body>
 </html>
