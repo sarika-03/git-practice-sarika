@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Frontend</h1>
+<button onclick="fetchBackend()">Call Backend</button>
+<p id="result"></p>
+
+<script>
+function fetchBackend() {
+  fetch('http://backend:5000/')
+    .then(res => res.text())
+    .then(data => document.getElementById('result').innerText = data)
+    .catch(err => console.error(err));
+}
+</script>
+</body>
+</html>
