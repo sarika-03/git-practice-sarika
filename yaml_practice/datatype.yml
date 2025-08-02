@@ -1,0 +1,51 @@
+#list
+colour:
+  -red
+  -blue 
+  -green
+
+#nested_dictionary
+university: 
+  - id: 1
+    name: sarika
+    year: 3rd
+    course: BCA
+  - id: 2
+    name: mayank
+    year: 4th
+    course: B.tech
+  
+#strings
+name: "sarika"
+
+num: !!int 40
+num1: !!float 40.8
+bin: !!binary True
+
+#multiline
+line: |
+  sarika is learing
+  devops and kubernetes
+  she loves working 
+  on real world project
+
+lines: <<
+  sarika is learing
+  devops and kubernetes
+  she loves working 
+  on real world project
+
+
+#anchor and alias
+devops: &myconfig
+  retries: 3
+  timeout: 60
+
+command: 
+  <<: *myconfig
+  default: True
+
+
+
+
+
