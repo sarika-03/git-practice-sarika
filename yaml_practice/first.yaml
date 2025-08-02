@@ -1,0 +1,17 @@
+name: sarika
+year: BCA 3rd year
+skills: 
+  -Python
+  -docker
+  -vapt
+  -git
+profile: 
+  role: aspiring devops engineer
+  goal: getting remote job
+project:
+  name: cronmate
+  tool: 
+    -bash
+    -docker
+    -kubernetes
+  status: ongoing
