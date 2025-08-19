@@ -1,4 +1,7 @@
-ARG UID=1000
-ARG GID=1000
-this type or parametrs in dockerfile is used only in build time they are like parameters in bash they did not store permanent unless they copy in env 
-they run using --build-arg flag during docker build command 
+1 . ARG UID=1000
+    ARG GID=1000
+    this type or parametrs in dockerfile is used only in build time they are like parameters in bash they did not store permanent unless they copy in env 
+    they run using --build-arg flag during docker build command 
+
+2 . env varibles are used in both run time and build time 
+    they permanently store in image until they are overwrite
