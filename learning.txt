@@ -5,3 +5,49 @@
 
 2 . env varibles are used in both run time and build time 
     they permanently store in image until they are overwrite
+
+these are some common depnedencies which use in dockerfile 
+
+🔹 1. Database related
+
+libpq-dev → PostgreSQL ke liye (Python ka psycopg2)
+default-libmysqlclient-dev → MySQL ke liye (Python ka mysqlclient)
+sqlite3 + libsqlite3-dev → SQLite ke liye
+
+🔹 2. Image / Video Processing
+
+libjpeg-dev → JPEG support (Pillow, OpenCV)
+zlib1g-dev → PNG/GIF compression (Pillow)
+libpng-dev → PNG images ke liye
+libtiff-dev → TIFF image files
+ffmpeg → Audio / Video processing (Django + Media apps)
+
+🔹 3. Security / Encryption
+
+libssl-dev → SSL/TLS (cryptography, OpenSSL, Django/Flask secure cookies)
+libffi-dev → Python cryptography libraries (paramiko, bcrypt, etc.)
+
+🔹 4. Python / Machine Learning
+
+python3-dev → Python headers (C extensions compile karne ke liye)
+build-essential → GCC compiler tools (numpy, pandas, lxml jaise heavy libs ke liye)
+libatlas-base-dev → NumPy / SciPy ke liye (fast linear algebra)
+libopencv-dev → OpenCV computer vision ke liye
+
+🔹 5. Node / Frontend
+
+nodejs (agar image me Node pre-installed nahi hai)
+npm / yarn → JS/React/Angular build tools
+sass / dart-sass → SCSS to CSS conversion (frontend assets)
+
+🔹 6. Web Servers / Runtimes
+
+gunicorn (Python WSGI server for Flask/Django)
+uvicorn + fastapi (Python ASGI server for modern apps)
+nginx → Static files serve karne / reverse proxy ke liye
+
+🔹 Bonus: Misc Useful
+curl → APIs test karne aur downloads ke liye
+git → Agar repo se code pull karna hai
+
+tzdata → Timezone setup karne ke liye
