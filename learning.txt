@@ -51,3 +51,45 @@ curl → APIs test karne aur downloads ke liye
 git → Agar repo se code pull karna hai
 
 tzdata → Timezone setup karne ke liye
+
+
+🔹 Identify Linux Distro in Container
+docker exec -it <container> sh → enter container shell
+cat /etc/os-release → distro info
+docker inspect <container> --format '{{.Config.Image}}' → base image name from host
+
+🔹 Python Images (Size Optimization)
+python:3.6 → based on Debian Buster (large size ~900MB)
+python:3.6-slim → smaller Debian (~80–100MB)
+python:3.6-alpine → minimal Alpine (~30MB), best for lightweight but some libs may break
+
+🔹 ENTRYPOINT vs CMD
+CMD → default command (overridable)
+ENTRYPOINT → fixed program (cannot be overridden easily, only args can be changed)
+Final command = ENTRYPOINT + CMD
+ENTRYPOINT → executable
+CMD → default args
+
+🔹 sleep Command (Linux)
+sleep 100 → pauses execution for 100 seconds
+Units: s (seconds, default), m (minutes), h (hours), d (days)
+Use cases: debugging, container keeping alive, script delays
+
+🔹 Find Container Subnet
+Inside container:
+ip addr show eth0 → shows IP + subnet
+ip route → shows default gateway + subnet
+From host:
+docker inspect <container> → find network
+docker network inspect <network> → shows Subnet and Gateway
+
+🔹 Create Custom Docker Network
+docker network create \
+  --driver bridge \
+  --subnet=182.18.0.0/24 \
+  --gateway=182.18.0.1 \
+  wp-mysql-network
+Verify:
+docker network ls → list networks
+docker network inspect wp-mysql-network → details (subnet + gateway)
+Containers attached to same custom network can talk directly.
