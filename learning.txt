@@ -93,3 +93,13 @@ Verify:
 docker network ls → list networks
 docker network inspect wp-mysql-network → details (subnet + gateway)
 Containers attached to same custom network can talk directly.
+
+
+# To push image in youre docker registry 
+first you login your registry
+then tag like this : docker tag myapp:latest <registry-username>/<repository-name>:<tag>
+docker tag myapp:latest myusername/myapp:1.0
+
+push the image like this : docker push <registry-username>/<repository-name>:<tag>
+docker push myusername/myapp:1.0
+
